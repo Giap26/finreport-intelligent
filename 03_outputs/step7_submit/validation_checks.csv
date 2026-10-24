@@ -1,0 +1,28 @@
+﻿group,check_id,target,status,detail
+V1_submission,columns,submission_output,PASS,"31 cột, đúng tên & thứ tự template"
+V1_submission,rows_keys,submission_output,PASS,"60 dòng, đúng thứ tự company_id + fiscal_year của template"
+V1_submission,no_dup_keys,submission_output,PASS,không trùng khóa
+V1_submission,2021_blank,submission_output,PASS,2021: 6 chỉ tiêu cần năm trước để trống (không tự sinh 2020)
+V1_submission,metrics_filled,submission_output,PASS,mọi ô chỉ tiêu còn lại đều có giá trị
+V1_submission,metrics_match_nb1,submission_output,PASS,"khớp bảng chỉ tiêu NB1, lệch lớn nhất 5.0e-07 (do làm tròn 6 chữ số)"
+V1_submission,range:risk_score,submission_output,PASS,"risk_score ∈ [0, 1]: min 0.007, max 0.927"
+V1_submission,range:confidence,submission_output,PASS,"confidence ∈ [0, 1]: min 0.600, max 0.950"
+V1_submission,enum:predicted_severity,submission_output,PASS,"chỉ dùng ['CRITICAL', 'HIGH', 'LOW', 'MEDIUM']"
+V1_submission,enum:predicted_overall_health,submission_output,PASS,"chỉ dùng ['HEALTHY', 'HIGH_RISK', 'RECOVERING', 'WATCH']"
+V1_submission,priority_rank,submission_output,PASS,"số nguyên dương, duy nhất, 1…60"
+V1_submission,not_empty:predicted_primary_scenario,submission_output,PASS,không rỗng
+V1_submission,not_empty:alert_reason,submission_output,PASS,không rỗng
+V1_submission,not_empty:evidence_fields,submission_output,PASS,không rỗng
+V1_submission,not_empty:model_name,submission_output,PASS,không rỗng
+V1_submission,consistency:healthy_low,submission_output,PASS,HEALTHY ⇒ severity LOW
+V1_submission,consistency:critical_highrisk,submission_output,PASS,CRITICAL ⇒ HIGH_RISK
+V1_submission,evidence_format,submission_output,PASS,evidence dạng file.csv:Cxxx:năm:trường
+V2_qa,columns,qa_submission,PASS,"8 cột, đúng template"
+V2_qa,question_ids,qa_submission,PASS,"30 question_id, đúng thứ tự template"
+V2_qa,not_empty:answer,qa_submission,PASS,đủ cả câu
+V2_qa,not_empty:evidence_source_files,qa_submission,PASS,đủ cả câu
+V2_qa,not_empty:evidence_source_fields,qa_submission,PASS,đủ cả câu
+V2_qa,not_empty:explanation,qa_submission,PASS,đủ cả câu
+V2_qa,not_empty:model_name,qa_submission,PASS,đủ cả câu
+V2_qa,range:confidence,qa_submission,PASS,"confidence ∈ [0, 1]"
+V2_qa,evidence_files,qa_submission,PASS,nguồn là tên file .csv của Data Pack

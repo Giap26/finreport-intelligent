@@ -1,0 +1,26 @@
+﻿question,expected_type,parsed_type,type_ok,company_ok,year_ok,metric_ok,all_ok,answered,parsed_fields,parsed_year
+Gross margin cua C010 nam 2024 bang bao nhieu?,RATIO_CALCULATION,RATIO_CALCULATION,True,True,True,True,True,True,gross_profit_vnd_mn;revenue_vnd_mn,2024
+Cho tôi biết hệ số thanh toán nhanh của C004 năm 2023,RATIO_CALCULATION,RATIO_CALCULATION,True,True,True,True,True,True,cash_and_cash_equivalents_vnd_mn;accounts_receivable_vnd_mn;total_current_liabilities_vnd_mn,2023
+C011 năm 2025 có khả năng trả lãi bao nhiêu lần?,RATIO_CALCULATION,RATIO_CALCULATION,True,True,True,True,True,True,operating_profit_vnd_mn;interest_expense_vnd_mn,2025
+Số ngày tồn kho năm 2025 của C007?,WORKING_CAPITAL_METRIC,WORKING_CAPITAL_METRIC,True,True,True,True,True,True,inventory_vnd_mn;cost_of_goods_sold_vnd_mn,2025
+dong tien tu do C012 nam 2025,CASHFLOW_CALCULATION,CASHFLOW_CALCULATION,True,True,True,True,True,True,net_cash_from_operating_activities_vnd_mn;capital_expenditure_vnd_mn,2025
+Vốn lưu động ròng của C001 năm 2022 là bao nhiêu triệu đồng?,LIQUIDITY_CALCULATION,LIQUIDITY_CALCULATION,True,True,True,True,True,True,total_current_assets_vnd_mn;total_current_liabilities_vnd_mn,2022
+ROE của C008 năm 2023?,RATIO_CALCULATION,RATIO_CALCULATION,True,True,True,True,True,True,net_income_vnd_mn;total_equity_vnd_mn,2023
+Debt to equity C005 năm 2024,RATIO_CALCULATION,RATIO_CALCULATION,True,True,True,True,True,True,short_term_debt_vnd_mn;long_term_debt_vnd_mn;total_equity_vnd_mn,2024
+Biên lợi nhuận ròng của C009 năm 2022 là bao nhiêu phần trăm?,RATIO_CALCULATION,RATIO_CALCULATION,True,True,True,True,True,True,net_income_vnd_mn;revenue_vnd_mn,2022
+Doanh thu C003 năm 2021 bao nhiêu?,DIRECT_VALUE,DIRECT_VALUE,True,True,True,True,True,True,revenue_vnd_mn,2021
+Lợi nhuận sau thuế của C012 năm 2025?,DIRECT_VALUE,DIRECT_VALUE,True,True,True,True,True,True,net_income_vnd_mn,2025
+Tồn kho của C004 năm 2025 là bao nhiêu?,DIRECT_VALUE,DIRECT_VALUE,True,True,True,True,True,True,inventory_vnd_mn,2025
+Công ty nào có ROA thấp nhất năm 2023?,RANKING,RANKING,True,True,True,True,True,True,net_income_vnd_mn;total_assets_vnd_mn,2023
+Doanh nghiệp nào có số ngày tồn kho lớn nhất năm 2024?,RANKING,RANKING,True,True,True,True,True,True,inventory_vnd_mn;cost_of_goods_sold_vnd_mn,2024
+Liệt kê 5 doanh nghiệp có biên lợi nhuận hoạt động cao nhất năm 2022,RANKING,RANKING,True,True,True,True,True,True,operating_profit_vnd_mn;revenue_vnd_mn,2022
+Các doanh nghiệp nào có lợi nhuận sau thuế âm năm 2022?,LIST_FILTER,LIST_FILTER,True,True,True,True,True,True,net_income_vnd_mn,2022
+Tăng trưởng doanh thu của C010 năm 2023 so với 2022 là bao nhiêu?,GROWTH_CALCULATION,GROWTH_CALCULATION,True,True,True,True,True,True,revenue_vnd_mn,2023
+Tốc độ tăng tổng nợ vay của C012 năm 2024 so với năm 2023?,GROWTH_CALCULATION,GROWTH_CALCULATION,True,True,True,True,True,True,short_term_debt_vnd_mn;long_term_debt_vnd_mn,2024
+Biên lợi nhuận gộp của C011 đã tăng bao nhiêu điểm phần trăm từ 2021 đến 2025?,CHANGE_CALCULATION,CHANGE_CALCULATION,True,True,True,True,True,True,gross_profit_vnd_mn;revenue_vnd_mn,2021;2025
+Từ 2021 đến 2025 doanh nghiệp nào có biên lợi nhuận gộp tăng mạnh nhất?,TREND_ANALYSIS,TREND_ANALYSIS,True,True,True,True,True,True,gross_profit_vnd_mn;revenue_vnd_mn,2021-2025
+"Với C008 giai đoạn 2022-2025, phải thu có tăng nhanh hơn doanh thu hay không?",BOOLEAN_ANALYSIS,BOOLEAN_ANALYSIS,True,True,True,True,True,True,accounts_receivable_vnd_mn;revenue_vnd_mn,2022-2025
+"Năm 2025, tồn kho của C007 tăng nhanh hơn doanh thu hay không?",BOOLEAN_ANALYSIS,BOOLEAN_ANALYSIS,True,True,True,True,True,True,inventory_vnd_mn;revenue_vnd_mn,2025
+Mô tả xu hướng doanh thu và CFO của C003 từ 2022 đến 2025,TREND_ANALYSIS,TREND_ANALYSIS,True,True,True,True,True,True,revenue_vnd_mn;net_cash_from_operating_activities_vnd_mn;accounts_receivable_vnd_mn,2022-2025
+Ending cash của C001 năm 2023 có bằng tiền và tương đương tiền trên bảng cân đối không?,RECONCILIATION,RECONCILIATION,True,True,True,True,True,True,ending_cash_vnd_mn;cash_and_cash_equivalents_vnd_mn,2023
+Tỷ lệ nợ đáo hạn trong 12 tháng của C012 năm 2023?,DIRECT_VALUE,DIRECT_VALUE,True,True,True,True,True,True,debt_maturing_within_12m_pct,2023

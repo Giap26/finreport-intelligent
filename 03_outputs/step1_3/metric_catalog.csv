@@ -1,0 +1,19 @@
+﻿metric_id,name_vi,pillar,unit,formula,needs_prev_year,interpretation_guard,evidence
+revenue_growth_pct,Tăng trưởng doanh thu,Tăng trưởng,pct,(Revenue_t − Revenue_t−1) / Revenue_t−1 × 100,True,,income_statement.csv:revenue_vnd_mn
+gross_margin_pct,Biên lợi nhuận gộp,Sinh lời,pct,Gross Profit / Revenue × 100,False,,income_statement.csv:gross_profit_vnd_mn;income_statement.csv:revenue_vnd_mn
+operating_margin_pct,Biên lợi nhuận hoạt động,Sinh lời,pct,Operating Profit / Revenue × 100,False,,income_statement.csv:operating_profit_vnd_mn;income_statement.csv:revenue_vnd_mn
+net_margin_pct,Biên lợi nhuận ròng,Sinh lời,pct,Net Income / Revenue × 100,False,,income_statement.csv:net_income_vnd_mn;income_statement.csv:revenue_vnd_mn
+current_ratio_x,Hệ số thanh toán hiện hành,Thanh khoản,x,Total Current Assets / Total Current Liabilities,False,,balance_sheet.csv:total_current_assets_vnd_mn;balance_sheet.csv:total_current_liabilities_vnd_mn
+quick_ratio_x,Hệ số thanh toán nhanh,Thanh khoản,x,(Cash + Accounts Receivable) / Total Current Liabilities,False,,balance_sheet.csv:cash_and_cash_equivalents_vnd_mn;balance_sheet.csv:accounts_receivable_vnd_mn;balance_sheet.csv:total_current_liabilities_vnd_mn
+debt_to_assets_pct,Nợ vay / Tổng tài sản,Đòn bẩy,pct,(Short-term Debt + Long-term Debt) / Total Assets × 100,False,,balance_sheet.csv:short_term_debt_vnd_mn;balance_sheet.csv:long_term_debt_vnd_mn;balance_sheet.csv:total_assets_vnd_mn
+debt_to_equity_x,Nợ vay / Vốn chủ sở hữu,Đòn bẩy,x,(Short-term Debt + Long-term Debt) / Total Equity,False,NEGATIVE_EQUITY_DENOMINATOR,balance_sheet.csv:short_term_debt_vnd_mn;balance_sheet.csv:long_term_debt_vnd_mn;balance_sheet.csv:total_equity_vnd_mn
+roa_pct,ROA (tài sản bình quân),Sinh lời,pct,Net Income / Average Total Assets × 100,True,,income_statement.csv:net_income_vnd_mn;balance_sheet.csv:total_assets_vnd_mn
+roe_pct,ROE (vốn chủ bình quân),Sinh lời,pct,Net Income / Average Total Equity × 100,True,NEGATIVE_EQUITY_DENOMINATOR,income_statement.csv:net_income_vnd_mn;balance_sheet.csv:total_equity_vnd_mn
+cfo_margin_pct,CFO / Doanh thu,Dòng tiền,pct,CFO / Revenue × 100,False,,cashflow.csv:net_cash_from_operating_activities_vnd_mn;income_statement.csv:revenue_vnd_mn
+cfo_to_net_income_x,CFO / LNST (chất lượng lợi nhuận),Dòng tiền,x,Net Cash from Operating Activities / Net Income,False,NON_POSITIVE_NET_INCOME,cashflow.csv:net_cash_from_operating_activities_vnd_mn;income_statement.csv:net_income_vnd_mn
+free_cash_flow_vnd_mn,Dòng tiền tự do,Dòng tiền,vnd_mn,CFO + Capital Expenditure (CAPEX mang dấu âm),False,,cashflow.csv:net_cash_from_operating_activities_vnd_mn;cashflow.csv:capital_expenditure_vnd_mn
+dso_days,Số ngày thu tiền (DSO),Vốn lưu động,days,Average Accounts Receivable / Revenue × 365,True,,balance_sheet.csv:accounts_receivable_vnd_mn;income_statement.csv:revenue_vnd_mn
+inventory_days,Số ngày tồn kho,Vốn lưu động,days,Average Inventory / COGS × 365,True,,balance_sheet.csv:inventory_vnd_mn;income_statement.csv:cost_of_goods_sold_vnd_mn
+dpo_days,Số ngày trả tiền (DPO),Vốn lưu động,days,Average Accounts Payable / COGS × 365,True,,balance_sheet.csv:accounts_payable_vnd_mn;income_statement.csv:cost_of_goods_sold_vnd_mn
+interest_coverage_x,Khả năng trả lãi,Đòn bẩy,x,Operating Profit / Interest Expense,False,NON_POSITIVE_OPERATING_PROFIT,income_statement.csv:operating_profit_vnd_mn;income_statement.csv:interest_expense_vnd_mn
+working_capital_vnd_mn,Vốn lưu động ròng,Thanh khoản,vnd_mn,Total Current Assets − Total Current Liabilities,False,,balance_sheet.csv:total_current_assets_vnd_mn;balance_sheet.csv:total_current_liabilities_vnd_mn

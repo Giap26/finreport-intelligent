@@ -1,0 +1,33 @@
+﻿rule_id,group,description,PASS,FAIL,N/A,max_abs_residual
+BS01,B_balance_sheet,TS ngắn hạn = Tiền + Phải thu + Tồn kho + TSNH khác,60,0,0,0.0
+BS02,B_balance_sheet,Tổng TS = TSNH + TSCĐ + Vô hình + Đầu tư DH + TSDH khác,60,0,0,0.0
+BS03,B_balance_sheet,Nợ ngắn hạn = Vay NH + Phải trả + Nợ NH khác,60,0,0,0.0
+BS04,B_balance_sheet,Tổng nợ = Nợ NH + Vay DH + Nợ DH khác,60,0,0,0.0
+BS05,B_balance_sheet,Vốn chủ = Vốn góp + LN giữ lại + VCSH khác,60,0,0,0.0
+BS06,B_balance_sheet,Tài sản = Nợ phải trả + Vốn chủ sở hữu,60,0,0,0.0
+BS07,B_balance_sheet,Tổng nguồn vốn = Tổng tài sản,60,0,0,0.0
+CF01,C_cashflow,CFO = LNST + Khấu hao + các biến động vốn lưu động,60,0,0,0.0
+CF02,C_cashflow,CFI = CAPEX + Δ vô hình + Δ đầu tư DH + Δ TSDH khác,60,0,0,0.0
+CF03,C_cashflow,CFF = Vay ròng + Phát hành vốn + Cổ tức,60,0,0,0.0
+CF04,C_cashflow,Biến động tiền = CFO + CFI + CFF,60,0,0,0.0
+CF05,C_cashflow,Tiền đầu kỳ + Biến động = Tiền cuối kỳ,60,0,0,0.0
+CF06,C_cashflow,Tiền cuối kỳ (LCTT) = Tiền trên bảng cân đối,60,0,0,0.0
+IS01,A_income_statement,Lợi nhuận gộp = Doanh thu − Giá vốn,60,0,0,0.0
+IS02,A_income_statement,LN hoạt động = LN gộp − CP bán hàng − CP quản lý − Khấu hao,60,0,0,0.0
+IS03,A_income_statement,LNTT = LN hoạt động + Thu nhập TC − Lãi vay + Thu nhập khác,60,0,0,0.0
+IS04,A_income_statement,LNST = LNTT − Thuế TNDN,60,0,0,0.0
+IS05,A_income_statement,Chi phí thuế không âm,60,0,0,0.0
+XP01,D_cross_period,Tiền đầu kỳ năm t = Tiền cuối kỳ năm t−1,48,0,12,0.0
+XP02,D_cross_period,Ảnh hưởng tiền của phải thu = −(AR_t − AR_t−1),48,0,12,0.0
+XP03,D_cross_period,Ảnh hưởng tiền của tồn kho = −ΔTồn kho,48,0,12,0.0
+XP04,D_cross_period,Ảnh hưởng tiền của TSNH khác = −ΔTSNH khác,48,0,12,0.0
+XP05,D_cross_period,Ảnh hưởng tiền của phải trả = +ΔPhải trả,48,0,12,0.0
+XP06,D_cross_period,Ảnh hưởng tiền của nợ NH khác = +ΔNợ NH khác,48,0,12,0.0
+XP07,D_cross_period,Ảnh hưởng tiền của nợ DH khác = +ΔNợ DH khác,48,0,12,0.0
+XP08,D_cross_period,Δ LN giữ lại = LNST + Cổ tức (cổ tức mang dấu âm),48,0,12,0.0
+XP09,D_cross_period,Δ Nợ vay (NH + DH) = Vay/trả nợ ròng,48,0,12,0.0
+XP10,D_cross_period,Δ Vốn góp = Phát hành vốn,48,0,12,0.0
+XP11,D_cross_period,Δ TSCĐ = CAPEX − Khấu hao (CAPEX mang dấu âm),48,0,12,0.0
+XP12,D_cross_period,Δ TS vô hình = −Dòng tiền vô hình,48,0,12,0.0
+XP13,D_cross_period,Δ Đầu tư DH = −Dòng tiền đầu tư DH,48,0,12,0.0
+XP14,D_cross_period,Δ TSDH khác = −Dòng tiền TSDH khác,48,0,12,0.0

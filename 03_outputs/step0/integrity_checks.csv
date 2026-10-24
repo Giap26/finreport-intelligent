@@ -1,0 +1,92 @@
+﻿group,check_id,target,status,detail
+G1_inventory,exists:company_info,01_data/company_info.csv,PASS,có
+G1_inventory,exists:income_statement,01_data/income_statement.csv,PASS,có
+G1_inventory,exists:balance_sheet,01_data/balance_sheet.csv,PASS,có
+G1_inventory,exists:cashflow,01_data/cashflow.csv,PASS,có
+G1_inventory,exists:financial_notes,01_data/financial_notes.csv,PASS,có
+G1_inventory,exists:data_dictionary,02_metadata/data_dictionary.csv,PASS,có
+G1_inventory,exists:dataset_manifest,02_metadata/dataset_manifest.csv,PASS,có
+G1_inventory,exists:financial_scenarios_sample,03_labels_sample/financial_scenarios_sample.csv,PASS,có
+G1_inventory,exists:financial_metrics_sample,03_labels_sample/financial_metrics_sample.csv,PASS,có
+G1_inventory,exists:questions_sample,03_labels_sample/questions_sample.csv,PASS,có
+G1_inventory,exists:answer_key_sample,03_labels_sample/answer_key_sample.csv,PASS,có
+G1_inventory,exists:submission_output_template,04_output_template/submission_output_template.csv,PASS,có
+G1_inventory,exists:qa_submission_template,04_output_template/qa_submission_template.csv,PASS,có
+G2_manifest,sha256:company_info.csv,01_data/company_info.csv,PASS,sha256 khớp manifest
+G2_manifest,size:company_info.csv,01_data/company_info.csv,PASS,2147 / 2147 bytes
+G2_manifest,encoding:company_info.csv,01_data/company_info.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:company_info.csv,01_data/company_info.csv,PASS,12 / 12 dòng
+G2_manifest,cols:company_info.csv,01_data/company_info.csv,PASS,13 / 13 cột
+G2_manifest,sha256:income_statement.csv,01_data/income_statement.csv,PASS,sha256 khớp manifest
+G2_manifest,size:income_statement.csv,01_data/income_statement.csv,PASS,6022 / 6022 bytes
+G2_manifest,encoding:income_statement.csv,01_data/income_statement.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:income_statement.csv,01_data/income_statement.csv,PASS,60 / 60 dòng
+G2_manifest,cols:income_statement.csv,01_data/income_statement.csv,PASS,15 / 15 cột
+G2_manifest,period:income_statement.csv,01_data/income_statement.csv,PASS,2021–2025 / kỳ vọng 2021–2025
+G2_manifest,sha256:balance_sheet.csv,01_data/balance_sheet.csv,PASS,sha256 khớp manifest
+G2_manifest,size:balance_sheet.csv,01_data/balance_sheet.csv,PASS,10325 / 10325 bytes
+G2_manifest,encoding:balance_sheet.csv,01_data/balance_sheet.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:balance_sheet.csv,01_data/balance_sheet.csv,PASS,60 / 60 dòng
+G2_manifest,cols:balance_sheet.csv,01_data/balance_sheet.csv,PASS,24 / 24 cột
+G2_manifest,period:balance_sheet.csv,01_data/balance_sheet.csv,PASS,2021–2025 / kỳ vọng 2021–2025
+G2_manifest,sha256:cashflow.csv,01_data/cashflow.csv,PASS,sha256 khớp manifest
+G2_manifest,size:cashflow.csv,01_data/cashflow.csv,PASS,9108 / 9108 bytes
+G2_manifest,encoding:cashflow.csv,01_data/cashflow.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:cashflow.csv,01_data/cashflow.csv,PASS,60 / 60 dòng
+G2_manifest,cols:cashflow.csv,01_data/cashflow.csv,PASS,23 / 23 cột
+G2_manifest,period:cashflow.csv,01_data/cashflow.csv,PASS,2021–2025 / kỳ vọng 2021–2025
+G2_manifest,sha256:financial_notes.csv,01_data/financial_notes.csv,PASS,sha256 khớp manifest
+G2_manifest,size:financial_notes.csv,01_data/financial_notes.csv,PASS,7632 / 7632 bytes
+G2_manifest,encoding:financial_notes.csv,01_data/financial_notes.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:financial_notes.csv,01_data/financial_notes.csv,PASS,60 / 60 dòng
+G2_manifest,cols:financial_notes.csv,01_data/financial_notes.csv,PASS,11 / 11 cột
+G2_manifest,period:financial_notes.csv,01_data/financial_notes.csv,PASS,2021–2025 / kỳ vọng 2021–2025
+G2_manifest,sha256:financial_scenarios_sample.csv,03_labels_sample/financial_scenarios_sample.csv,PASS,sha256 khớp manifest
+G2_manifest,size:financial_scenarios_sample.csv,03_labels_sample/financial_scenarios_sample.csv,PASS,1580 / 1580 bytes
+G2_manifest,encoding:financial_scenarios_sample.csv,03_labels_sample/financial_scenarios_sample.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:financial_scenarios_sample.csv,03_labels_sample/financial_scenarios_sample.csv,PASS,18 / 18 dòng
+G2_manifest,cols:financial_scenarios_sample.csv,03_labels_sample/financial_scenarios_sample.csv,PASS,6 / 6 cột
+G2_manifest,period:financial_scenarios_sample.csv,03_labels_sample/financial_scenarios_sample.csv,PASS,2022–2025 / kỳ vọng 2022–2025
+G2_manifest,sha256:data_dictionary.csv,02_metadata/data_dictionary.csv,PASS,sha256 khớp manifest
+G2_manifest,size:data_dictionary.csv,02_metadata/data_dictionary.csv,PASS,15283 / 15283 bytes
+G2_manifest,encoding:data_dictionary.csv,02_metadata/data_dictionary.csv,PASS,kỳ vọng UTF-8-SIG
+G2_manifest,rows:data_dictionary.csv,02_metadata/data_dictionary.csv,PASS,92 / 92 dòng
+G2_manifest,cols:data_dictionary.csv,02_metadata/data_dictionary.csv,PASS,10 / 10 cột
+G2_manifest,unlisted:financial_metrics_sample,03_labels_sample/financial_metrics_sample.csv,PASS,Không có trong manifest; sha256=ffc5e8d2d6519b88… (ghi nhận để audit)
+G2_manifest,unlisted:questions_sample,03_labels_sample/questions_sample.csv,PASS,Không có trong manifest; sha256=72da3a42ae015265… (ghi nhận để audit)
+G2_manifest,unlisted:answer_key_sample,03_labels_sample/answer_key_sample.csv,PASS,Không có trong manifest; sha256=cbe0320e0e98d7f3… (ghi nhận để audit)
+G2_manifest,unlisted:submission_output_template,04_output_template/submission_output_template.csv,PASS,Không có trong manifest; sha256=1d49b7b9722cccac… (ghi nhận để audit)
+G2_manifest,unlisted:qa_submission_template,04_output_template/qa_submission_template.csv,PASS,Không có trong manifest; sha256=691d00f606378243… (ghi nhận để audit)
+G3_schema,schema:company_info,company_info.csv,PASS,"13 trường đúng tên, thứ tự, kiểu, không rỗng"
+G3_schema,schema:income_statement,income_statement.csv,PASS,"15 trường đúng tên, thứ tự, kiểu, không rỗng"
+G3_schema,schema:balance_sheet,balance_sheet.csv,PASS,"24 trường đúng tên, thứ tự, kiểu, không rỗng"
+G3_schema,schema:cashflow,cashflow.csv,PASS,"23 trường đúng tên, thứ tự, kiểu, không rỗng"
+G3_schema,schema:financial_notes,financial_notes.csv,PASS,"11 trường đúng tên, thứ tự, kiểu, không rỗng"
+G3_schema,schema:financial_scenarios_sample,financial_scenarios_sample.csv,PASS,"6 trường đúng tên, thứ tự, kiểu, không rỗng"
+G4_keys,pk:company_info,company_info.csv,PASS,12 company_id duy nhất
+G4_keys,pk:income_statement,income_statement.csv,PASS,0 khóa trùng
+G4_keys,grid:income_statement,income_statement.csv,PASS,đủ 12×5=60 company-year
+G4_keys,fk:income_statement,income_statement.csv,PASS,mọi company_id có trong company_info
+G4_keys,pk:balance_sheet,balance_sheet.csv,PASS,0 khóa trùng
+G4_keys,grid:balance_sheet,balance_sheet.csv,PASS,đủ 12×5=60 company-year
+G4_keys,fk:balance_sheet,balance_sheet.csv,PASS,mọi company_id có trong company_info
+G4_keys,pk:cashflow,cashflow.csv,PASS,0 khóa trùng
+G4_keys,grid:cashflow,cashflow.csv,PASS,đủ 12×5=60 company-year
+G4_keys,fk:cashflow,cashflow.csv,PASS,mọi company_id có trong company_info
+G4_keys,pk:financial_notes,financial_notes.csv,PASS,0 khóa trùng
+G4_keys,grid:financial_notes,financial_notes.csv,PASS,đủ 12×5=60 company-year
+G4_keys,fk:financial_notes,financial_notes.csv,PASS,mọi company_id có trong company_info
+G4_keys,no_2020,01_data/*,PASS,Không có năm 2020 – chỉ tiêu cần năm trước để trống cho 2021
+G5_units,statement_unit,company_info.csv,PASS,giá trị: ['VND_million']
+G5_units,reporting_currency,company_info.csv,PASS,giá trị: ['VND']
+G5_units,fiscal_year_end,company_info.csv,PASS,giá trị: ['12-31']
+G5_units,subindustry,company_info.csv,PASS,giá trị: ['Packaged Food Manufacturing']
+G5_units,data_is_synthetic,company_info.csv,PASS,toàn bộ là dữ liệu giả lập
+G6_overlap,same:net_income_vnd_mn,income_statement ↔ cashflow,PASS,60/60 dòng khớp
+G6_overlap,same:depreciation_amortization_vnd_mn,income_statement ↔ cashflow,PASS,60/60 dòng khớp
+G7_template,keys:submission_output,submission_output_template.csv,PASS,60 khóa = 60 khóa dữ liệu
+G7_template,cols:submission_output,submission_output_template.csv,PASS,31 cột
+G7_template,ids:qa_submission,qa_submission_template.csv,PASS,30 question_id khớp questions_sample
+G7_template,ids:answer_key,answer_key_sample.csv,PASS,30 câu có đáp án
+G8_join,row_count,master_panel,PASS,60 dòng (kỳ vọng 60)
+G8_join,no_null,master_panel,PASS,"68 cột, không rỗng do join"

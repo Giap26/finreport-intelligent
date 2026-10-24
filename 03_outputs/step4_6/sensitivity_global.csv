@@ -1,0 +1,6 @@
+﻿threshold_factor,tag_precision,tag_recall,tag_f1_micro,tag_f1_macro,scenario_accuracy,scenario_macro_recall,severity_accuracy,severity_within_1,health_accuracy,high_critical_recall,false_alarm_rate_on_low,spearman_risk_vs_severity
+0.8,0.974,0.927,0.95,0.952,0.889,0.923,0.889,1.0,0.889,1.0,0.0,0.877
+0.9,0.927,0.927,0.927,0.93,0.889,0.923,0.889,1.0,0.944,1.0,0.0,0.877
+1.0,1.0,0.976,0.988,0.994,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.877
+1.1,0.972,0.854,0.909,0.91,0.889,0.923,0.944,0.944,0.944,0.917,0.0,0.877
+1.2,0.971,0.829,0.895,0.901,0.889,0.923,0.944,0.944,0.944,0.917,0.0,0.877

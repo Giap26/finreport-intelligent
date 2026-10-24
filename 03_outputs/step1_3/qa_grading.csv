@@ -1,0 +1,31 @@
+﻿question_id,question_type,difficulty,answer_type,our_answer,our_normalized,reference_answer,reference_normalized,tolerance,correct,note,confidence
+Q001,DIRECT_VALUE,EASY,VND_million,1299735,1299735.0,1299735,1299735,0.0,True,|lệch| = 0 (dung sai 0.0),0.99
+Q002,DIRECT_VALUE,EASY,VND_million,-20564,-20564.0,-20564,-20564,0.0,True,|lệch| = 0 (dung sai 0.0),0.99
+Q003,DIRECT_VALUE,EASY,VND_million,1405175,1405175.0,1405175,1405175,0.0,True,|lệch| = 0 (dung sai 0.0),0.99
+Q004,RATIO_CALCULATION,EASY,percent,22.978530,22.978530238856383,22.98,22.978530,0.05,True,|lệch| = 2.38856e-07 (dung sai 0.05),0.97
+Q005,RATIO_CALCULATION,MEDIUM,x,2.651984,2.65198416062195,2.652,2.651984,0.01,True,|lệch| = 1.60622e-07 (dung sai 0.01),0.97
+Q006,RATIO_CALCULATION,MEDIUM,x,1.773160,1.7731602465517868,1.773,1.773160,0.01,True,|lệch| = 2.46552e-07 (dung sai 0.01),0.97
+Q007,RATIO_CALCULATION,MEDIUM,percent,35.887689,35.88768875099617,35.89,35.887689,0.05,True,|lệch| = 2.49004e-07 (dung sai 0.05),0.97
+Q008,RATIO_CALCULATION,MEDIUM,x,0.705845,0.7058446370175135,0.706,0.705845,0.01,True,|lệch| = 3.62982e-07 (dung sai 0.01),0.97
+Q009,RATIO_CALCULATION,MEDIUM,x,0.411987,0.41198701599814513,0.412,0.411987,0.01,True,|lệch| = 1.59981e-08 (dung sai 0.01),0.97
+Q010,RATIO_CALCULATION,MEDIUM,x,2.948639,2.948639172003247,2.949,2.948639,0.02,True,|lệch| = 1.72003e-07 (dung sai 0.02),0.97
+Q011,GROWTH_CALCULATION,MEDIUM,percent,13.087914,13.087914205345113,13.09,13.087914,0.05,True,|lệch| = 2.05345e-07 (dung sai 0.05),0.97
+Q012,GROWTH_CALCULATION,MEDIUM,percent,30.534108,30.534108416342935,30.53,30.534108,0.05,True,|lệch| = 4.16343e-07 (dung sai 0.05),0.97
+Q013,CHANGE_CALCULATION,MEDIUM,percentage_point,12.203574,12.203574292926955,12.20,12.203574,0.05,True,|lệch| = 2.92927e-07 (dung sai 0.05),0.97
+Q014,CASHFLOW_CALCULATION,MEDIUM,VND_million,-12630,-12630.0,-12630,-12630,0.0,True,|lệch| = 0 (dung sai 0.0),0.97
+Q015,WORKING_CAPITAL_METRIC,HARD,days,79.734644,79.73464413671923,79.7,79.734644,0.2,True,|lệch| = 1.36719e-07 (dung sai 0.2),0.97
+Q016,WORKING_CAPITAL_METRIC,HARD,days,117.140122,117.14012214614596,117.1,117.140122,0.2,True,|lệch| = 1.46146e-07 (dung sai 0.2),0.97
+Q017,WORKING_CAPITAL_METRIC,HARD,days,52.426662,52.42666193129599,52.4,52.426662,0.2,True,|lệch| = 6.8704e-08 (dung sai 0.2),0.97
+Q018,LIQUIDITY_CALCULATION,EASY,VND_million,682096,682096.0,682096,682096,0.0,True,|lệch| = 0 (dung sai 0.0),0.97
+Q019,RANKING,MEDIUM,company_id,C010 - NovaViet Packaged Foods JSC,C010,C010 - NovaViet Packaged Foods JSC,C010,0.0,True,,0.97
+Q020,RANKING,MEDIUM,company_id,C005 - EverViet Food Industries JSC,C005,C005 - EverViet Food Industries JSC,C005,0.0,True,,0.97
+Q021,RANKING,HARD,ordered_company_id_list,C010 - NovaViet Packaged Foods JSC;C008 - Lotus Nutrition Industries JSC;C011 - Phú An Nutrition JSC,C010;C008;C011,C010 - NovaViet Packaged Foods JSC;C008 - Lotus Nutrition Industries JSC;C011 - Phú An Nutrition JSC,C010;C008;C011,0.0,True,so khớp cả thứ tự,0.97
+Q022,RANKING,HARD,company_id,C003 - Cửu Long Nutrition JSC,C003,C003 - Cửu Long Nutrition JSC,C003,0.0,True,,0.97
+Q023,BOOLEAN_ANALYSIS,MEDIUM,boolean,Có,True,Có,TRUE,0.0,True,,0.95
+Q024,BOOLEAN_ANALYSIS,MEDIUM,boolean,Có,True,Có,TRUE,0.0,True,,0.95
+Q025,TREND_ANALYSIS,HARD,short_text,"C002 2023–2025: Doanh thu tăng liên tục +29.1% (2,331,689 → 3,010,804); CFO 174,954 → 117,886; CFO/LNST giảm còn 0.434x (từ 0.714x) – khả năng chuyển lợi nhuận thành tiền suy yếu; phải thu tăng +82.9%, nhanh hơn doanh thu; tồn kho tăng +48.4%, nhanh hơn doanh thu; gợi ý chất lượng dòng tiền giảm và áp lực vốn lưu động (tiền bị giữ trong phải thu/tồn kho).",REVENUE_UP;CFO_DOWN;CFO_CONVERSION_WEAKENING;RECEIVABLES_UP;INVENTORY_UP;WORKING_CAPITAL_PRESSURE,"Doanh thu tăng liên tục nhưng khả năng chuyển đổi lợi nhuận thành CFO suy yếu; phải thu tăng mạnh. Điều này gợi ý chất lượng dòng tiền giảm và áp lực vốn lưu động, đặc biệt từ khoản phải thu.",REVENUE_UP;CFO_CONVERSION_WEAKENING;RECEIVABLES_UP;WORKING_CAPITAL_PRESSURE,0.0,True,"tag bắt buộc 4/4; tag thêm: ['CFO_DOWN', 'INVENTORY_UP']",0.85
+Q026,TREND_ANALYSIS,HARD,company_id,C006 - Gia Hưng Packaged Foods JSC,C006,C006 - Gia Hưng Packaged Foods JSC,C006,0.0,True,,0.95
+Q027,LIST_FILTER,MEDIUM,company_id_list,C007 - Hòa Bình Food Products JSC;C012 - Thành Đạt Food Industries JSC,C007;C012,C007 - Hòa Bình Food Products JSC;C012 - Thành Đạt Food Industries JSC,C007;C012,0.0,True,so khớp tập hợp,0.97
+Q028,RECONCILIATION,MEDIUM,boolean,Có,True,Có,TRUE,0.0,True,,0.99
+Q029,DIRECT_VALUE,EASY,percent,5.500000,5.5,5.50,5.5000,0.01,True,|lệch| = 0 (dung sai 0.01),0.99
+Q030,DIRECT_VALUE,EASY,percent,48.000000,48.0,48.00,48.0000,0.01,True,|lệch| = 0 (dung sai 0.01),0.99

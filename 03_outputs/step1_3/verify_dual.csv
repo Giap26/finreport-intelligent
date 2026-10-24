@@ -1,0 +1,19 @@
+﻿metric_id,cells,agree,disagree,na_cells (2021/không xác định),max_abs_diff,status
+revenue_growth_pct,60,60,0,12,0.0,PASS
+gross_margin_pct,60,60,0,0,0.0,PASS
+operating_margin_pct,60,60,0,0,0.0,PASS
+net_margin_pct,60,60,0,0,0.0,PASS
+current_ratio_x,60,60,0,0,0.0,PASS
+quick_ratio_x,60,60,0,0,0.0,PASS
+debt_to_assets_pct,60,60,0,0,0.0,PASS
+debt_to_equity_x,60,60,0,0,0.0,PASS
+roa_pct,60,60,0,12,0.0,PASS
+roe_pct,60,60,0,12,0.0,PASS
+cfo_margin_pct,60,60,0,0,0.0,PASS
+cfo_to_net_income_x,60,60,0,0,0.0,PASS
+free_cash_flow_vnd_mn,60,60,0,0,0.0,PASS
+dso_days,60,60,0,12,0.0,PASS
+inventory_days,60,60,0,12,0.0,PASS
+dpo_days,60,60,0,12,0.0,PASS
+interest_coverage_x,60,60,0,0,0.0,PASS
+working_capital_vnd_mn,60,60,0,0,0.0,PASS
