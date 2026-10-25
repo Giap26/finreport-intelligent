@@ -28,6 +28,36 @@ import finreport_whatif as wf  # noqa: E402
 
 st.set_page_config(page_title="FinReport Intelligence", page_icon="◆", layout="wide", initial_sidebar_state="expanded")
 
+# Đoạn mã xóa sạch mọi dấu vết kết nối GitHub và Streamlit Cloud
+st.markdown(
+    """
+    <style>
+    /* 1. Ẩn nút GitHub (Fork / View code) ở góc trên cùng bên phải */
+    .stAppDeployButton {
+        display: none !important;
+    }
+    
+    /* 2. Ẩn triệt để logo tròn và bảng Profile Card ở góc dưới cùng bên phải */
+    footer {
+        visibility: hidden;
+    }
+    [data-testid="stStatusWidget"] {
+        visibility: hidden;
+    }
+    .st-emotion-cache-kgp69b, .st-emotion-cache-15rc699 {
+        display: none !important;
+    }
+    
+    /* 3. Ẩn nút Menu 3 chấm nếu bạn muốn giao diện sạch hoàn toàn */
+    #MainMenu {
+        visibility: hidden;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # ================================================================== TOKENS
 INK, INK2, MUTED, RULE, PAPER, PANEL = "#13223F", "#4B5870", "#7A8599", "#DCE1E8", "#F3F5F8", "#FFFFFF"
 BLUE, BLUE_DARK, BAND, BAND_EDGE = "#2a78d6", "#1c5cab", "#cde2fb", "#9ec5f4"
