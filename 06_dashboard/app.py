@@ -51,15 +51,62 @@ st.markdown(f"""
 <style>
   html, body, [class*="css"], .stMarkdown, .stDataFrame, button, input, textarea, select {{ font-family: {FONT}; }}
   .stApp {{ background: {PAPER}; color: {INK}; }}
-  section[data-testid="stSidebar"] {{ background: {INK}; }}
+  /* ---------- thanh bên ---------- */
+  section[data-testid="stSidebar"] {{ background: linear-gradient(180deg, #0F1B33 0%, {INK} 100%); border-right: 1px solid #1d3157; }}
+  section[data-testid="stSidebar"][aria-expanded="true"] {{ min-width: 296px; max-width: 296px; }}
   section[data-testid="stSidebar"] * {{ color: #E8ECF3 !important; }}
-  section[data-testid="stSidebar"] .stRadio label p {{ font-size: 0.95rem; }}
-  section[data-testid="stSidebar"] .stButton button {{ background: transparent; border: 1px solid #8FB4E8; }}
-  section[data-testid="stSidebar"] .stButton button:hover {{ background: #1c3a66; border-color: #cde2fb; }}
+  section[data-testid="stSidebar"] hr {{ border-color: rgba(255,255,255,.10); }}
+  .brand {{ display: flex; align-items: center; gap: .75rem; padding: .3rem .1rem 1.1rem .1rem;
+            border-bottom: 1px solid rgba(255,255,255,.10); margin-bottom: 1.1rem; }}
+  .brand .logo {{ width: 42px; height: 42px; border-radius: 11px; flex: none; display: flex; align-items: center; justify-content: center;
+                  background: linear-gradient(135deg, #3b8ae6, #1c5cab); font-size: 20px; font-weight: 700;
+                  box-shadow: 0 2px 10px rgba(42,120,214,.5); }}
+  .brand .name {{ font-size: 1.05rem; font-weight: 700; line-height: 1.2; color: #FFFFFF !important; }}
+  .brand .tag {{ font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; color: #8FB4E8 !important; margin-top: .1rem; }}
+  .nav-label {{ font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
+                color: #7F93B5 !important; margin: 0 0 .5rem .45rem; }}
+  /* điều hướng: ẩn nút tròn, tô sáng mục đang chọn (hỗ trợ cả cấu trúc cũ và mới của Streamlit) */
+  section[data-testid="stSidebar"] div[role="radiogroup"] {{ gap: .22rem; }}
+  section[data-testid="stSidebar"] div[role="radiogroup"] > div {{ width: 100%; }}
+  section[data-testid="stSidebar"] label[data-baseweb="radio"], section[data-testid="stSidebar"] label[data-testid="stRadioOption"] {{
+        width: 100%; margin: 0; padding: .6rem .8rem; border-radius: 10px; border-left: 3px solid transparent;
+        cursor: pointer; transition: background .15s; box-sizing: border-box; }}
+  section[data-testid="stSidebar"] label[data-baseweb="radio"] > div:first-child {{ display: none; }}
+  section[data-testid="stSidebar"] label[data-testid="stRadioOption"] > div > div:first-child {{ display: none; }}
+  section[data-testid="stSidebar"] label[data-baseweb="radio"]:hover, section[data-testid="stSidebar"] label[data-testid="stRadioOption"]:hover {{ background: rgba(255,255,255,.07); }}
+  section[data-testid="stSidebar"] div[role="radiogroup"] label p {{ font-size: .95rem; font-weight: 500; margin: 0; }}
+  section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {{ background: rgba(42,120,214,.30); border-left-color: #5BA0F0; }}
+  section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) p {{ font-weight: 700; color: #FFFFFF !important; }}
+  section[data-testid="stSidebar"] .stButton button {{ background: #2a78d6; border: 1px solid #2a78d6; font-weight: 600; border-radius: 10px; padding: .55rem 1rem; }}
+  section[data-testid="stSidebar"] .stButton button:hover {{ background: #1c5cab; border-color: #5BA0F0; }}
+  .status {{ border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.045); border-radius: 12px; padding: .75rem .9rem; margin-top: .9rem; }}
+  .status .r {{ display: flex; justify-content: space-between; align-items: center; gap: .5rem; font-size: .8rem; color: #B9C6DC !important; }}
+  .status .r b {{ color: #FFFFFF !important; font-weight: 600; }}
+  .status .r + .r {{ margin-top: .35rem; }}
+  .dot {{ display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: .4rem; }}
+  .side-foot {{ font-size: .72rem; line-height: 1.45; color: #7F93B5 !important; margin-top: 1.1rem; padding-top: .8rem; border-top: 1px solid rgba(255,255,255,.10); }}
   .block-container {{ padding-top: 1.6rem; max-width: 1320px; }}
   h1, h2, h3 {{ color: {INK}; letter-spacing: -0.01em; }}
   h1 {{ font-weight: 700; font-size: 1.85rem; margin-bottom: 0.1rem; }}
-  .lede {{ color: {INK2}; font-size: 1rem; max-width: 70ch; margin: 0 0 1.2rem 0; }}
+  .lede {{ color: {INK2}; font-size: .98rem; line-height: 1.55; max-width: none; margin: .3rem 0 1.3rem 0;
+           background: {PANEL}; border: 1px solid {RULE}; border-left: 4px solid {BLUE}; border-radius: 10px; padding: .8rem 1.1rem; }}
+  .kpi-row {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 0 0 1.4rem 0; }}
+  .kpi-tile {{ background: {PANEL}; border: 1px solid {RULE}; border-top: 3px solid {BLUE}; border-radius: 12px; padding: .85rem 1.1rem; }}
+  .kpi-tile b {{ display: block; font-size: 1.65rem; font-weight: 700; color: {INK}; line-height: 1.15; font-variant-numeric: tabular-nums; }}
+  .kpi-tile span {{ color: {INK2}; font-size: .82rem; }}
+  .sec {{ margin: 1.5rem 0 .65rem 0; }}
+  .sec h3 {{ margin: 0 !important; padding: 0 !important; font-size: 1.12rem; }}
+  .sec .hint {{ color: {MUTED}; font-size: .86rem; margin-top: .15rem; }}
+  .sec {{ line-height: 1.3; }}
+  .rank-grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; }}
+  .rank-card {{ background: {PANEL}; border: 1px solid {RULE}; border-left: 5px solid {RULE}; border-radius: 12px; padding: .8rem 1rem; }}
+  .rank-card .top {{ display: flex; justify-content: space-between; align-items: center; gap: .5rem; }}
+  .rank-card .no {{ font-size: 1.35rem; font-weight: 700; color: {BLUE_DARK}; font-variant-numeric: tabular-nums; }}
+  .rank-card .cid {{ font-weight: 700; margin-left: .35rem; }}
+  .rank-card .nm {{ color: {MUTED}; font-size: .78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: .15rem; }}
+  .rank-card .scn {{ font-weight: 600; margin-top: .45rem; }}
+  .rank-card .meta {{ color: {INK2}; font-size: .8rem; margin-top: .1rem; }}
+  @media (max-width: 1100px) {{ .kpi-row, .rank-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
   .panel {{ background: {PANEL}; border: 1px solid {RULE}; border-radius: 10px; padding: 1rem 1.15rem; }}
   .kpis {{ display: flex; gap: 2.2rem; flex-wrap: wrap; margin: 0.2rem 0 1.2rem 0; }}
   .kpi b {{ display: block; font-size: 1.35rem; font-weight: 600; color: {INK}; font-variant-numeric: tabular-nums; }}
@@ -153,14 +200,19 @@ def get_engine(stamp: float):
 summary_path = PROJECT / "03_outputs" / "pipeline_summary.json"
 
 # ------------------------------------------------------------------ thanh bên
+PAGES = ["Sổ cái rủi ro", "Hồ sơ doanh nghiệp", "Thẻ cảnh báo & truy vết", "Mô phỏng what-if",
+         "Trợ lý hỏi đáp", "Chất lượng mô hình", "Dữ liệu & nhật ký"]
+NAV_ICON = {"Sổ cái rủi ro": "grid_view", "Hồ sơ doanh nghiệp": "domain", "Thẻ cảnh báo & truy vết": "fact_check",
+            "Mô phỏng what-if": "tune", "Trợ lý hỏi đáp": "forum", "Chất lượng mô hình": "monitoring",
+            "Dữ liệu & nhật ký": "database"}
 with st.sidebar:
-    st.markdown("### FinReport Intelligence")
-    st.caption("Cảnh báo sức khỏe tài chính · 12 DN thực phẩm đóng gói · 2021–2025")
-    page = st.radio("Trang", ["Sổ cái rủi ro", "Hồ sơ doanh nghiệp", "Thẻ cảnh báo & truy vết", "Mô phỏng what-if",
-                              "Trợ lý hỏi đáp", "Chất lượng mô hình", "Dữ liệu & nhật ký"], label_visibility="collapsed")
-    st.divider()
+    st.markdown("<div class='brand'><div class='logo'>◆</div><div><div class='name'>FinReport Intelligence</div>"
+                "<div class='tag'>Financial health alerts</div></div></div>", unsafe_allow_html=True)
+    st.markdown("<div class='nav-label'>Điều hướng</div>", unsafe_allow_html=True)
+    page = st.radio("Trang", PAGES, format_func=lambda p: f":material/{NAV_ICON[p]}:  {p}", label_visibility="collapsed")
+    st.markdown("<div class='nav-label' style='margin-top:1.5rem'>Pipeline</div>", unsafe_allow_html=True)
     quick = st.toggle("Chạy nhanh (bỏ kiểm thử nặng)", value=True)
-    if st.button("Chạy lại pipeline", use_container_width=True):
+    if st.button("Chạy lại pipeline", use_container_width=True, icon=":material/play_arrow:"):
         import run_pipeline
         logs = []
         with st.spinner("Đang chạy 8 bước…"):
@@ -169,7 +221,13 @@ with st.sidebar:
         (st.success if res["status"] == "PASS" else st.error)(f"{res['status']} · {res['total_ms'] / 1000:.1f} s")
     if summary_path.exists():
         s_ = json.loads(summary_path.read_text(encoding="utf-8"))
-        st.caption(f"Lần chạy gần nhất: {s_['finished_at'][:16].replace('T', ' ')} · {s_['status']}")
+        ok_ = s_["status"] == "PASS"
+        st.markdown(f"<div class='status'>"
+                    f"<div class='r'><span>Trạng thái</span><b><span class='dot' style='background:{'#2fbf71' if ok_ else '#e5534b'}'></span>{s_['status']}</b></div>"
+                    f"<div class='r'><span>Chạy gần nhất</span><b style='white-space:nowrap'>{s_['finished_at'][:16].replace('T', ' ')}</b></div>"
+                    f"<div class='r'><span>Phạm vi</span><b>12 DN · 2021–2025</b></div></div>", unsafe_allow_html=True)
+    st.markdown("<div class='side-foot'>Dữ liệu giả lập. Cảnh báo chỉ là tín hiệu hỗ trợ phân tích, "
+                "không phải kết luận kiểm toán, gian lận hay khuyến nghị đầu tư.</div>", unsafe_allow_html=True)
 
 if not summary_path.exists():
     st.title("Chưa có kết quả phân tích")
@@ -197,6 +255,16 @@ if page == "Sổ cái rủi ro":
     st.markdown("<p class='lede'>Mỗi ô là một doanh nghiệp trong một năm: màu và ký hiệu cho mức độ cảnh báo, con số là "
                 "risk score (0–1). Đọc theo hàng để thấy doanh nghiệp xấu đi hay phục hồi; đọc theo cột để so sánh trong năm.</p>",
                 unsafe_allow_html=True)
+
+    # ---- Hàng 1: chỉ số tổng quan
+    st.markdown(f"<div class='kpi-row'>"
+                f"<div class='kpi-tile'><b>{K3.get('calculation_accuracy', 0):.0%}</b><span>Calculation Accuracy</span></div>"
+                f"<div class='kpi-tile'><b>{K3.get('numerical_qa_accuracy', 0):.0%}</b><span>Numerical QA</span></div>"
+                f"<div class='kpi-tile'><b>{K6.get('tag_f1_micro', 0):.1%}</b><span>Tag F1 (18 nhãn mẫu)</span></div>"
+                f"<div class='kpi-tile'><b>{D['summary']['total_ms'] / 1000:.1f} s</b><span>Toàn pipeline</span></div></div>",
+                unsafe_allow_html=True)
+
+    # ---- Hàng 2: ma trận sức khỏe doanh nghiệp (toàn chiều rộng)
     sev_n = pred.assign(s=pred["predicted_severity"].map(fs.SEV_ORDER))
     z = sev_n.pivot(index="company_id", columns="fiscal_year", values="s").loc[COMPANIES[::-1]]
     score = pred.pivot(index="company_id", columns="fiscal_year", values="risk_score").loc[COMPANIES[::-1]]
@@ -215,25 +283,39 @@ if page == "Sổ cái rủi ro":
             s_ = sevs[int(z.loc[c, y])]
             fig.add_annotation(x=yi, y=ci, showarrow=False,      # vị trí danh mục (chuỗi "2023" bị hiểu là số)
                                text=f"<span style='color:{STATUS[s_]}'>{GLYPH[s_]}</span> {score.loc[c, y]:.2f}",
-                               font=dict(family=FONT, size=13, color=INK))
-    style_fig(fig, height=520, legend=False)
-    fig.update_xaxes(side="top", tickfont=dict(size=13, color=INK))
-    fig.update_yaxes(tickfont=dict(size=12.5, color=INK), gridcolor=PANEL)
-    left, right = st.columns([1.55, 1])
-    with left:
+                               font=dict(family=FONT, size=14, color=INK))
+    style_fig(fig, height=640, legend=False)
+    fig.update_xaxes(side="top", tickfont=dict(size=14, color=INK))
+    fig.update_yaxes(tickfont=dict(size=13, color=INK), gridcolor=PANEL, automargin=True)
+    st.markdown("<div class='sec'><h3>Ma trận sức khỏe doanh nghiệp</h3>"
+                "<div class='hint'>12 doanh nghiệp × 5 năm · ký hiệu và màu = mức độ cảnh báo · số = risk score</div></div>",
+                unsafe_allow_html=True)
+    with st.container(border=True):
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
         st.markdown(" ".join(badge(s_) for s_ in sevs) + "<span class='muted'>&nbsp; mức độ cảnh báo</span>", unsafe_allow_html=True)
-    with right:
-        y_sel = st.selectbox("Danh sách ưu tiên – năm", YEARS[::-1], index=0)
-        top = pred[pred["fiscal_year"] == y_sel].sort_values("priority_rank_in_year").head(8)
-        st.markdown(f"**Xem trước trong năm {y_sel}**")
-        for r in top.itertuples():
-            st.markdown(f"<div class='panel' style='margin-bottom:.45rem;padding:.6rem .8rem'>"
-                        f"<div style='display:flex;justify-content:space-between;gap:.5rem;align-items:center'>"
-                        f"<b>{r.priority_rank_in_year}. {r.company_id}</b>{badge(r.predicted_severity)}</div>"
-                        f"<div class='muted'>{SCEN_VI[r.predicted_primary_scenario]} · risk {r.risk_score:.2f} · tin cậy {r.confidence:.2f}</div>"
-                        f"</div>", unsafe_allow_html=True)
-    st.markdown("---")
+
+    # ---- Hàng 3: xếp hạng ưu tiên
+    h1, h2 = st.columns([3, 1], vertical_alignment="bottom")
+    with h2:
+        y_sel = st.selectbox("Năm xếp hạng", YEARS[::-1], index=0)
+    with h1:
+        st.markdown(f"<div class='sec' style='margin-top:1.1rem'><h3>Xếp hạng ưu tiên năm {y_sel}</h3>"
+                    f"<div class='hint'>8 doanh nghiệp cần xem trước · xếp theo mức độ, sau đó theo risk score</div></div>",
+                    unsafe_allow_html=True)
+    top = pred[pred["fiscal_year"] == y_sel].sort_values("priority_rank_in_year").head(8)
+    cards = "".join(
+        f"<div class='rank-card' style='border-left-color:{STATUS[r.predicted_severity]}'>"
+        f"<div class='top'><div><span class='no'>#{r.priority_rank_in_year}</span><span class='cid'>{r.company_id}</span></div>{badge(r.predicted_severity)}</div>"
+        f"<div class='nm'>{D['names'].get(r.company_id, '')}</div>"
+        f"<div class='scn'>{SCEN_VI[r.predicted_primary_scenario]}</div>"
+        f"<div class='meta'>risk {r.risk_score:.2f} · tin cậy {r.confidence:.2f}</div></div>"
+        for r in top.itertuples())
+    st.markdown(f"<div class='rank-grid'>{cards}</div>", unsafe_allow_html=True)
+
+    # ---- Hàng 4: phân bố kịch bản và số DN theo mức độ
+    st.markdown("<div class='sec'><h3>Phân bố kịch bản và mức độ</h3>"
+                "<div class='hint'>Kịch bản chính của năm mới nhất và số doanh nghiệp theo mức độ từng năm</div></div>",
+                unsafe_allow_html=True)
     c1, c2 = st.columns(2)
     with c1:
         yy = YEARS[-1]
@@ -243,18 +325,14 @@ if page == "Sổ cái rủi ro":
                               hovertemplate="%{y}: %{x} DN<extra></extra>"))
         style_fig(f2, height=330, legend=False).update_layout(title=dict(text=f"Kịch bản chính năm {yy}", font=dict(color=INK, size=14)))
         f2.update_xaxes(visible=False, type="linear")
-        st.plotly_chart(f2, use_container_width=True, config={"displayModeBar": False})
+        with st.container(border=True):
+            st.plotly_chart(f2, use_container_width=True, config={"displayModeBar": False})
     with c2:
         tab = pd.crosstab(pred["fiscal_year"], pred["predicted_severity"]).reindex(columns=sevs, fill_value=0)
         tab.columns = [f"{GLYPH[s_]} {SEV_VI[s_]}" for s_ in sevs]
-        st.markdown(f"**Số doanh nghiệp theo mức độ, từng năm**")
-        st.dataframe(tab, use_container_width=True)
-        st.markdown(f"<div class='kpis'>"
-                    f"<div class='kpi'><b>{K3.get('calculation_accuracy', 0):.0%}</b><span>Calculation Accuracy</span></div>"
-                    f"<div class='kpi'><b>{K3.get('numerical_qa_accuracy', 0):.0%}</b><span>Numerical QA</span></div>"
-                    f"<div class='kpi'><b>{K6.get('tag_f1_micro', 0):.1%}</b><span>Tag F1 (18 nhãn mẫu)</span></div>"
-                    f"<div class='kpi'><b>{D['summary']['total_ms'] / 1000:.1f} s</b><span>Toàn pipeline</span></div></div>",
-                    unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown("**Số doanh nghiệp theo mức độ, từng năm**")
+            st.dataframe(tab, use_container_width=True)
 
 # ================================================================== 2. HỒ SƠ DOANH NGHIỆP
 elif page == "Hồ sơ doanh nghiệp":

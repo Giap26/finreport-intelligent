@@ -1,12 +1,12 @@
 {
   "project": "D:\\Python\\FES CĐS",
-  "started_at": "2026-10-21T09:59:38+07:00",
+  "started_at": "2026-10-25T11:34:54+07:00",
   "quick": false,
   "steps": {
     "step0_ingest": {
-      "run_id": "S0-20261021-095938-ab5dff",
+      "run_id": "S0-20261025-113454-3b1d83",
       "verdict": "PASS",
-      "ms": 1499.7,
+      "ms": 2059.8,
       "checks": {
         "PASS": 91
       },
@@ -16,9 +16,9 @@
       "headline": "91 PASS · 0 WARN · 0 FAIL"
     },
     "step1_accounting": {
-      "run_id": "S1-20261021-095940-88c99b",
+      "run_id": "S1-20261025-113456-ad1c07",
       "verdict": "PASS",
-      "ms": 571.8,
+      "ms": 1864.4,
       "checks": {
         "PASS": 1752,
         "N/A": 168
@@ -27,9 +27,9 @@
       "headline": "32 luật · 1752 PASS · 0 FAIL · 168 N/A"
     },
     "step2_metrics": {
-      "run_id": "S2-20261021-095940-e0bfe7",
+      "run_id": "S2-20261025-113458-14d91b",
       "verdict": "PASS",
-      "ms": 493.6,
+      "ms": 1131.4,
       "metrics": 18,
       "cells": 1080,
       "flags": {
@@ -41,9 +41,9 @@
       "headline": "18 chỉ tiêu × 60 dòng"
     },
     "step3_verify_qa": {
-      "run_id": "S3-20261021-095941-9dec94",
+      "run_id": "S3-20261025-113459-9b4903",
       "verdict": "PASS",
-      "ms": 1338.4,
+      "ms": 3239.9,
       "kpi": {
         "dual_verify_agreement": 1.0,
         "numerical_qa_accuracy": 1.0,
@@ -58,16 +58,16 @@
       "headline": "QA 100% · Calc 100% · verify 100%"
     },
     "step4_trend_peer": {
-      "run_id": "S4-20261021-095942-56b5a8",
+      "run_id": "S4-20261025-113502-09e0ef",
       "verdict": "PASS",
-      "ms": 235.7,
+      "ms": 603.8,
       "features": 82,
       "headline": "82 đặc trưng"
     },
     "step5_signals": {
-      "run_id": "S5-20261021-095942-975e9b",
+      "run_id": "S5-20261025-113503-83dc57",
       "verdict": "PASS",
-      "ms": 27.0,
+      "ms": 51.7,
       "thresholds": {
         "margin_drop_pp": 3.0,
         "op_margin_drop_pp": 3.0,
@@ -117,9 +117,9 @@
       "headline": "19 tín hiệu"
     },
     "step6_scoring": {
-      "run_id": "S6-20261021-095942-d58868",
+      "run_id": "S6-20261025-113503-7d497f",
       "verdict": "PASS",
-      "ms": 19683.5,
+      "ms": 24854.4,
       "kpi": {
         "tag_precision": 1.0,
         "tag_recall": 0.9756,
@@ -142,9 +142,9 @@
       "headline": "tag F1 98.8% · baseline 33.3%"
     },
     "step7_submit": {
-      "run_id": "S7-20261021-100002-8a692e",
+      "run_id": "S7-20261025-113528-6ec93d",
       "verdict": "PASS",
-      "ms": 2102.8,
+      "ms": 2766.6,
       "checks": {
         "PASS": 27
       },
@@ -153,15 +153,15 @@
         "calculation_accuracy_file": 1.0,
         "alert_tag_f1_file": 0.9877
       },
-      "pipeline_ms_total": 588.3,
+      "pipeline_ms_total": 716.6,
       "submission_sha256": {
-        "submission_output.csv": "cd05d24c2cb28dc9a1131ac26ebca9e79d23c46e17eb1944df4f9c050b3a1635",
-        "qa_submission.csv": "1dbcaa6840e28ea10aac2d3aa5f19e347abd8c2ab7562471e82f138366dc0310"
+        "submission_output.csv": "2bf9fc45307df922e4d546e4ce7f18c0ab83b3046f4d5499988b7013bd01d3d0",
+        "qa_submission.csv": "923f88cb1c70b53f08d73cb906a74fe241db2d9d824e681341763517bf114719"
       },
       "headline": "27 kiểm tra PASS · file nộp đã ghi"
     }
   },
-  "finished_at": "2026-10-21T10:00:04+07:00",
+  "finished_at": "2026-10-25T11:35:31+07:00",
   "status": "PASS",
-  "total_ms": 25958.0
+  "total_ms": 36645.1
 }

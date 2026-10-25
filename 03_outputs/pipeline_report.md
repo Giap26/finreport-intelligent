@@ -1,21 +1,21 @@
 # Báo cáo pipeline tự động – FinReport Intelligence
 
-- **Trạng thái:** PASS · **Tổng thời gian:** 26.0 s · **Chế độ:** đầy đủ
-- **Bắt đầu:** 2026-10-21T09:59:38+07:00 · **Kết thúc:** 2026-10-21T10:00:04+07:00
+- **Trạng thái:** PASS · **Tổng thời gian:** 36.6 s · **Chế độ:** đầy đủ
+- **Bắt đầu:** 2026-10-25T11:34:54+07:00 · **Kết thúc:** 2026-10-25T11:35:31+07:00
 - **Data fingerprint:** `ffcb73450eb148d9ff4078a1…`
 
 ## Các bước
 
 | Bước | Run ID | Kết luận | Thời gian | Tóm tắt |
 |---|---|---|---:|---|
-| step0_ingest | `S0-20261021-095938-ab5dff` | PASS | 1500 ms | 91 PASS · 0 WARN · 0 FAIL |
-| step1_accounting | `S1-20261021-095940-88c99b` | PASS | 572 ms | 32 luật · 1752 PASS · 0 FAIL · 168 N/A |
-| step2_metrics | `S2-20261021-095940-e0bfe7` | PASS | 494 ms | 18 chỉ tiêu × 60 dòng |
-| step3_verify_qa | `S3-20261021-095941-9dec94` | PASS | 1338 ms | QA 100% · Calc 100% · verify 100% |
-| step4_trend_peer | `S4-20261021-095942-56b5a8` | PASS | 236 ms | 82 đặc trưng |
-| step5_signals | `S5-20261021-095942-975e9b` | PASS | 27 ms | 19 tín hiệu |
-| step6_scoring | `S6-20261021-095942-d58868` | PASS | 19684 ms | tag F1 98.8% · baseline 33.3% |
-| step7_submit | `S7-20261021-100002-8a692e` | PASS | 2103 ms | 27 kiểm tra PASS · file nộp đã ghi |
+| step0_ingest | `S0-20261025-113454-3b1d83` | PASS | 2060 ms | 91 PASS · 0 WARN · 0 FAIL |
+| step1_accounting | `S1-20261025-113456-ad1c07` | PASS | 1864 ms | 32 luật · 1752 PASS · 0 FAIL · 168 N/A |
+| step2_metrics | `S2-20261025-113458-14d91b` | PASS | 1131 ms | 18 chỉ tiêu × 60 dòng |
+| step3_verify_qa | `S3-20261025-113459-9b4903` | PASS | 3240 ms | QA 100% · Calc 100% · verify 100% |
+| step4_trend_peer | `S4-20261025-113502-09e0ef` | PASS | 604 ms | 82 đặc trưng |
+| step5_signals | `S5-20261025-113503-83dc57` | PASS | 52 ms | 19 tín hiệu |
+| step6_scoring | `S6-20261025-113503-7d497f` | PASS | 24854 ms | tag F1 98.8% · baseline 33.3% |
+| step7_submit | `S7-20261025-113528-6ec93d` | PASS | 2767 ms | 27 kiểm tra PASS · file nộp đã ghi |
 
 ## KPI
 
