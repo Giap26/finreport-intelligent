@@ -248,7 +248,7 @@ with st.sidebar:
     page = st.radio("Trang", PAGES, format_func=lambda p: f":material/{NAV_ICON[p]}:  {p}", label_visibility="collapsed")
     st.markdown("<div class='nav-label' style='margin-top:1.5rem'>Pipeline</div>", unsafe_allow_html=True)
     quick = st.toggle("Chạy nhanh (bỏ kiểm thử nặng)", value=True)
-    if st.button("Chạy lại pipeline", use_container_width=True, icon=":material/play_arrow:"):
+    if st.button("Chạy lại pipeline", use_container_width=True, icon=":material/play_arrow:", disabled=True, help="Tính năng này chỉ khả dụng trên môi trường cục bộ để bảo vệ toàn vẹn dữ liệu gốc."):
         import run_pipeline
         logs = []
         with st.spinner("Đang chạy 8 bước…"):
