@@ -30,21 +30,35 @@ st.set_page_config(page_title="FinReport Intelligence", page_icon="◆", layout=
 
 st.markdown("""
 <style>
-  /* Ẩn các thành phần ở góc trên bên phải (Toolbar, Deploy, Menu, Line trang trí) */
+  /* 1. Ẩn các thành phần ở góc trên bên phải */
   [data-testid="stToolbar"], [data-testid="stAppDeployButton"],
   [data-testid="stMainMenu"], [data-testid="stDecoration"], #MainMenu { 
       display: none !important; 
   }
   
-  /* Ẩn footer "Made with Streamlit" */
-  footer { 
-      visibility: hidden; 
-      height: 0; 
-  }
+  /* 2. Ẩn footer mặc định */
+  footer { visibility: hidden !important; height: 0 !important; }
   
-  /* Ẩn nút GitHub Badge ở góc dưới bên phải */
-  [data-testid="stViewerBadge"] {
+  /* 3. Đập tan tất cả các class Profile và Badge bằng các selector của bạn + bổ sung */
+  [class*="viewerBadge"], 
+  [class*="_profileContainer"],
+  [class*="_viewerBadge"], 
+  [data-testid="appCreatorAvatar"],
+  [data-testid="stViewerBadge"],
+  [data-testid="stAppStatus"],
+  [class*="StyledAppStatus"],
+  div[class*="manageApp"],
+  button[class*="manageApp"],
+  a[href*="share.streamlit.io/user/"],
+  a[href*="github.com/giaphvtc"],
+  iframe[title="Streamlit app status"],
+  div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"] {
       display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
   }
 </style>
 """, unsafe_allow_html=True)
@@ -228,8 +242,8 @@ NAV_ICON = {"Sổ cái rủi ro": "grid_view", "Hồ sơ doanh nghiệp": "domai
             "Mô phỏng what-if": "tune", "Trợ lý hỏi đáp": "forum", "Chất lượng mô hình": "monitoring",
             "Dữ liệu & nhật ký": "database"}
 with st.sidebar:
-    st.markdown("<div class='brand'><div class='logo'>◆</div><div><div class='name'>FinReport Intelligence</div>"
-                "<div class='tag'>Financial health alerts</div></div></div>", unsafe_allow_html=True)
+    st.markdown("<div class='brand'><div class='logo'>◆</div><div><div class='name'>SÁU CHÚ VỊT HỒNG</div>"
+                "<div class='tag'>fESTIVAL CĐS</div></div></div>", unsafe_allow_html=True)
     st.markdown("<div class='nav-label'>Điều hướng</div>", unsafe_allow_html=True)
     page = st.radio("Trang", PAGES, format_func=lambda p: f":material/{NAV_ICON[p]}:  {p}", label_visibility="collapsed")
     st.markdown("<div class='nav-label' style='margin-top:1.5rem'>Pipeline</div>", unsafe_allow_html=True)
