@@ -30,9 +30,22 @@ st.set_page_config(page_title="FinReport Intelligence", page_icon="◆", layout=
 
 st.markdown("""
 <style>
+  /* Ẩn các thành phần ở góc trên bên phải (Toolbar, Deploy, Menu, Line trang trí) */
   [data-testid="stToolbar"], [data-testid="stAppDeployButton"],
-  [data-testid="stMainMenu"], [data-testid="stDecoration"], #MainMenu { display: none !important; }
-  footer { visibility: hidden; height: 0; }
+  [data-testid="stMainMenu"], [data-testid="stDecoration"], #MainMenu { 
+      display: none !important; 
+  }
+  
+  /* Ẩn footer "Made with Streamlit" */
+  footer { 
+      visibility: hidden; 
+      height: 0; 
+  }
+  
+  /* Ẩn nút GitHub Badge ở góc dưới bên phải */
+  [data-testid="stViewerBadge"] {
+      display: none !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 
